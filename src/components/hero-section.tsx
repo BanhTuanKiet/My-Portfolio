@@ -17,16 +17,16 @@ export default function HeroSection() {
                     <p className="text-xl sm:text-2xl text-muted-foreground mb-2">
                         .NET Backend Developer
                     </p>
-                    <p className="text-md text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+                    <p className="text-md text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                         Specializing in building modern web applications with ReactJS, Next.js, and ASP.NET Core.
                     </p>
-                    <p className="text-md text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+                    <p className="text-md text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                         I love creating scalable systems, clean APIs, and smooth, responsive user experiences.
                     </p>
-                    <p className="text-md text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+                    <p className="text-md text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                         Experienced in working with both SQL and NoSQL databases.
                     </p>
-                    <p className="text-md text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+                    <p className="text-md text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                         Familiar with caching and real-time technologies like Redis, Firebase, as well as hosting and deployment on Vercel, Google Cloud, and Docker-based environments.
                     </p>
                 </div>

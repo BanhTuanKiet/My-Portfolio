@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation"
 import Link from "next/link"
-import { ArrowLeft, Calendar, BookOpen } from "lucide-react"
+import { ArrowLeft, BookOpen } from "lucide-react"
 import { getArticleBySlug, getAllArticles } from "@/lib/articles"
 
 export async function generateStaticParams() {
@@ -36,10 +36,6 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           <div className="flex items-center gap-4 mb-6">
             <div className="p-3 bg-cyan-500/10 rounded-lg">
               <BookOpen className="w-6 h-6 text-cyan-400" />
-            </div>
-            <div className="flex items-center gap-2 text-slate-500">
-              <Calendar className="w-4 h-4" />
-              <span>{article.date}</span>
             </div>
           </div>
 

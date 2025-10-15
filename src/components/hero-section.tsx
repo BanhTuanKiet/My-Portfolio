@@ -9,7 +9,7 @@ export default function HeroSection() {
         >
             <div className="max-w-4xl mx-auto text-center">
                 <div className="mb-6">
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+                    <h1 className="text-4xl sm:text-2xl lg:text-7xl font-bold mb-4 leading-tight">
                         <span className="text-primary inline-block animate-typing-loop overflow-hidden whitespace-nowrap border-r-4 border-primary">
                             {"Hi, I'm Banh Tuan Kiet"}
                         </span>
@@ -20,8 +20,8 @@ export default function HeroSection() {
                     </p>
 
                     <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                        Specializing in building modern web applications with ReactJS, Next.js, and ASP.NET Core. 
-                        I love creating scalable systems, clean APIs, and smooth, responsive user experiences.
+                        {/* Specializing in building modern web applications with ReactJS, Next.js, and ASP.NET Core. 
+                        I love creating scalable systems, clean APIs, and smooth, responsive user experiences. */}
                     </p>
                 </div>
 

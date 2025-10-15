@@ -20,8 +20,8 @@ export default function HeroSection() {
                     </p>
 
                     <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                        {/* Specializing in building modern web applications with ReactJS, Next.js, and ASP.NET Core. 
-                        I love creating scalable systems, clean APIs, and smooth, responsive user experiences. */}
+                        Specializing in building modern web applications with ReactJS, Next.js, and ASP.NET Core. 
+                        I love creating scalable systems, clean APIs, and smooth, responsive user experiences.
                     </p>
                 </div>
 

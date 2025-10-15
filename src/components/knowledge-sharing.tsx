@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { BookOpen, Calendar, ArrowRight } from "lucide-react"
+import { BookOpen, ArrowRight } from "lucide-react"
 import { getAllArticles } from "@/lib/articles"
 
 export default function KnowledgeSharing() {
@@ -23,10 +23,6 @@ export default function KnowledgeSharing() {
                             <div className="flex items-start gap-3 mb-4">
                                 <div className="p-2 bg-cyan-500/10 rounded-lg">
                                     <BookOpen className="w-5 h-5 text-primary" />
-                                </div>
-                                <div className="flex items-center gap-2 text-sm text-primart my-auto ms-auto">
-                                    <Calendar className="w-4 h-4" />
-                                    <span>{article.date}</span>
                                 </div>
                             </div>
 

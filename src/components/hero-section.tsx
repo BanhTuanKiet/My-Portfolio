@@ -9,19 +9,19 @@ export default function HeroSection() {
         >
             <div className="max-w-4xl mx-auto text-center">
                 <div className="mb-6">
-                    <h1 className="text-4xl sm:text-2xl lg:text-7xl font-bold mb-4 leading-tight">
+                    <h1 className="text-4xl sm:text-2xl lg:text-6xl font-bold leading-tight">
                         <span className="text-primary inline-block animate-typing-loop overflow-hidden whitespace-nowrap border-r-4 border-primary">
-                            {"Hi, I'm Banh Tuan Kiet"}
+                            {"Chào, tôi là Bành Tuấn Kiệt"}
                         </span>
                     </h1>
 
-                    <p className="text-lg sm:text-xl text-muted-foreground mb-2">
-                        .NET Backend Developer
+                    <p className="text-lg sm:text-2xl text-muted-foreground mb-2">
+                        .NET Developer
                     </p>
 
                     <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                        Specializing in building modern web applications with ReactJS, Next.js, and ASP.NET Core. 
-                        I love creating scalable systems, clean APIs, and smooth, responsive user experiences.
+                        Chuyên phát triển các ứng dụng web hiện đại với React.js, Next.js và ASP.NET Core.
+                        Tôi đam mê xây dựng hệ thống có khả năng mở rộng, API tối ưu và trải nghiệm người dùng mượt mà, responsive.
                     </p>
                 </div>
 
@@ -34,13 +34,13 @@ export default function HeroSection() {
                             rel="noopener noreferrer"
                         >
                             <Download className="h-4 w-4" />
-                            Download CV
+                            Tải CV
                         </a>
                     </Button>
 
                     <Button size="lg" variant="outline" className="text-sm sm:text-base" asChild>
                         <a href="#projects" className="gap-2">
-                            View Projects
+                            Xem dự án
                             <ArrowRight className="h-4 w-4" />
                         </a>
                     </Button>
@@ -48,13 +48,13 @@ export default function HeroSection() {
                     <Button size="lg" variant="outline" className="text-sm sm:text-base" asChild>
                         <a href="#contact" className="gap-2">
                             <Mail className="h-4 w-4" />
-                            Contact Me
+                            Liên hệ
                         </a>
                     </Button>
                 </div>
 
                 <div className="mt-10 text-xs sm:text-sm text-muted-foreground">
-                    <p>📍 Ho Chi Minh City, Vietnam</p>
+                    <p>Tân Bình, Thành phố Hồ Chí Minh, Việt Nam</p>
                 </div>
             </div>
         </section>

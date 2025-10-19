@@ -4,35 +4,9 @@ import { ASPNETCore, Bootstrap, Cloudinary, EntityFrameworkCore, Expressjs, Fire
 
 const projects = [
     {
-        title: "Clinic Appointment Booking System",
+        title: "Nền Tảng Quản Lý Dự Án & Công Việc Thời Gian Thực",
         description:
-            "A web application developed to streamline clinic operations. The system supports efficient management of patient records, appointment bookings, medical examinations, and payment processing.",
-        tech: [
-            Reactjs,
-            Bootstrap,
-            ASPNETCore,
-            EntityFrameworkCore,
-            SQLServer,
-            JWT,
-            GoogleCloud,
-            VNPay
-        ],
-        features: [
-            "Booking system by doctor & schedule",
-            "Role management (Admin, Doctor, Patient)",
-            "JWT authentication with Identity integration",
-            "VNPay payment integration for secure transactions",
-            "Clean UI with React Context + Bootstrap",
-        ],
-        teamSize: 3,
-        duration: "Sep 2025 - Now",
-        image: "/hospital-appointment-booking-dashboard.jpg",
-        link: "https://github.com/BanhTuanKiet/BookingCare"
-    },
-    {
-        title: "Real-time project and task management platform",
-        description:
-            "A real-time agile project management system featuring backlog, sprint, and task tracking capabilities. It supports team collaboration, dynamic role-based access control, online presence, and instant notifications for seamless and efficient project execution.",
+            "Hệ thống quản lý dự án agile thời gian thực với tính năng theo dõi backlog, sprint và công việc. Hỗ trợ cộng tác nhóm, kiểm soát truy cập dựa trên vai trò động, trạng thái trực tuyến và thông báo tức thì để thực hiện dự án liền mạch và hiệu quả.",
         tech: [
             Nextjs,
             TailwindCSS,
@@ -44,21 +18,47 @@ const projects = [
             GoogleCloud
         ],
         features: [
-            "Manage backlog → sprint → task → subtask",
-            "Dynamic role & permission system",
-            "Middleware-based authorization",
-            "Real-time task status updates",
-            "Assignee checking and notifications",
+            "Quản lý backlog → sprint → task → subtask",
+            "Hệ thống vai trò & phân quyền động",
+            "Ủy quyền dựa trên Middleware",
+            "Cập nhật trạng thái công việc thời gian thực",
+            "Kiểm tra người được chỉ định và thông báo",
         ],
         teamSize: 3,
-        duration: "Mar - May 2025",
+        duration: "Tháng 9/2025 - Hiện tại",
         image: "/project-management-kanban-board.png",
         link: "https://github.com/BanhTuanKiet/ProjectManagement"
     },
     {
-        title: "E-Commerce Web Application",
+        title: "Hệ Thống Đặt Lịch Khám Phòng Khám",
         description:
-            "A web application that streamlines eCommerce operations, enabling management of products, orders, inventory, reviews, and payments, while allowing customers to browse, order, and track purchases. Features JWTbased authentication with role-based access, plus search, filtering, and pagination for product browsing.",
+            "Ứng dụng web được phát triển để tối ưu hóa hoạt động của phòng khám. Hệ thống hỗ trợ quản lý hồ sơ bệnh nhân, đặt lịch hẹn, khám bệnh và xử lý thanh toán hiệu quả.",
+        tech: [
+            Reactjs,
+            Bootstrap,
+            ASPNETCore,
+            EntityFrameworkCore,
+            SQLServer,
+            JWT,
+            GoogleCloud,
+            VNPay
+        ],
+        features: [
+            "Hệ thống đặt lịch theo bác sĩ & lịch trình",
+            "Quản lý vai trò (Admin, Bác sĩ, Bệnh nhân)",
+            "Xác thực JWT với tích hợp Identity",
+            "Tích hợp thanh toán VNPay cho giao dịch bảo mật",
+            "Giao diện thân thiện với React Context + Bootstrap",
+        ],
+        teamSize: 3,
+        duration: "Tháng 3 - 5/2025",
+        image: "/hospital-appointment-booking-dashboard.jpg",
+        link: "https://github.com/BanhTuanKiet/BookingCare"
+    },
+    {
+        title: "Ứng Dụng Web Thương Mại Điện Tử",
+        description:
+            "Ứng dụng web tối ưu hóa hoạt động thương mại điện tử, cho phép quản lý sản phẩm, đơn hàng, tồn kho, đánh giá và thanh toán, đồng thời cho phép khách hàng duyệt, đặt hàng và theo dõi đơn mua. Tính năng xác thực JWT với quyền truy cập dựa trên vai trò, cùng với tìm kiếm, lọc và phân trang để duyệt sản phẩm.",
         tech: [
             Reactjs,
             Bootstrap,
@@ -70,16 +70,16 @@ const projects = [
             Firebase,
         ],
         features: [
-            "Product browsing, filtering, and search with pagination",
-            "Shopping cart and checkout flow with real-time stock updates",
-            "VNPay payment gateway integration",
-            "Admin dashboard for product, category, and order management",
-            "Cloudinary integration for image storage",
-            "Firebase for notifications and analytics",
+            "Duyệt sản phẩm, lọc và tìm kiếm với phân trang",
+            "Giỏ hàng và quy trình thanh toán với cập nhật tồn kho thời gian thực",
+            "Tích hợp cổng thanh toán VNPay",
+            "Bảng điều khiển quản trị để quản lý sản phẩm, danh mục và đơn hàng",
+            "Tích hợp Cloudinary để lưu trữ hình ảnh",
+            "Firebase cho thông báo và phân tích",
         ],
         image: "/ecommerce-website-dashboard.png",
         teamSize: 1,
-        duration: "Jul - Sep 2024",
+        duration: "Tháng 7 - 9/2025",
         link: "https://github.com/BanhTuanKiet/E-Commerce"
     }
 ]
@@ -88,9 +88,9 @@ export default function Projects() {
     return (
         <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto ">
-                <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-center">Projects</h2>
+                <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-center">Dự Án</h2>
                 <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-                    Real-world applications showcasing my technical expertise and problem-solving abilities
+                    Các ứng dụng thực tế thể hiện chuyên môn kỹ thuật và khả năng giải quyết vấn đề của tôi
                 </p>
 
                 <div className="space-y-8">
@@ -115,7 +115,7 @@ export default function Projects() {
                                         </h3>
                                         <div className="flex items-center gap-2 text-sm text-muted-foreground">
                                             <Users className="h-4 w-4" />
-                                            <span>{project.teamSize} members</span>
+                                            <span>{project.teamSize} thành viên</span>
                                         </div>
                                     </div>
 
@@ -129,7 +129,7 @@ export default function Projects() {
                                 <p className="text-muted-foreground mb-4 leading-relaxed">{project.description}</p>
 
                                 <div className="mb-4">
-                                    <h4 className="text-sm font-semibold mb-2 text-primary">Key Features:</h4>
+                                    <h4 className="text-sm font-semibold mb-2 text-primary">Tính năng chính:</h4>
                                     <ul className="space-y-1 text-sm text-muted-foreground">
                                         {project.features.map((feature, i) => (
                                             <li key={i} className="flex items-start gap-2">
@@ -157,11 +157,11 @@ export default function Projects() {
                                 {/* <div className="flex gap-3">
                                     <Button size="sm" variant="outline" className="gap-2 bg-transparent">
                                         <Github className="h-4 w-4" />
-                                        Code
+                                        Mã nguồn
                                     </Button>
                                     <Button size="sm" variant="outline" className="gap-2 bg-transparent">
                                         <ExternalLink className="h-4 w-4" />
-                                        Live Demo
+                                        Demo
                                     </Button>
                                 </div> */}
                             </div>

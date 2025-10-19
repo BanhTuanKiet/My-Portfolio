@@ -9,8 +9,8 @@ export default function KnowledgeSharing() {
         <section id="knowledge" className="py-20 px-6 md:px-12 lg:px-24">
             <div className="max-w-6xl mx-auto">
                 <div className="mb-12 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold text-slate-100 mb-4">Knowledge Sharing</h2>
-                    <p className="text-slate-400 text-lg">Sharing insights and tutorials about JavaScript and Java</p>
+                    <h2 className="text-3xl md:text-4xl font-bold text-slate-100 mb-4">Chia Sẻ Kiến Thức</h2>
+                    <p className="text-slate-400 text-lg">Chia sẻ góc nhìn và hướng dẫn về JavaScript và Java</p>
                 </div>
 
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -41,7 +41,7 @@ export default function KnowledgeSharing() {
                             </div>
 
                             <div className="flex items-center gap-2 text-primary text-sm font-medium group-hover:gap-3 transition-all">
-                                Read More
+                                Đọc thêm
                                 <ArrowRight className="w-4 h-4" />
                             </div>
                         </Link>

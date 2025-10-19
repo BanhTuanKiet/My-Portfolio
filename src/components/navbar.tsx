@@ -5,11 +5,11 @@ import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 
 const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "Projects", href: "#projects" },
-    { name: "Skills", href: "#skills" },
-    { name: "Knowledges", href: "#knowledge" },
-    { name: "Contact", href: "#contact" },
+    { name: "Trang chủ", href: "#home" },
+    { name: "Dự án", href: "#projects" },
+    { name: "Kỹ năng", href: "#skills" },
+    { name: "Kiến thức", href: "#knowledge" },
+    { name: "Liên hệ", href: "#contact" },
 ]
 
 export default function Navbar() {
@@ -32,10 +32,10 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     <a href="#home" className="text-xl font-bold text-foreground hover:text-primary transition-colors">
-                        Banh Tuan Kiet
+                        Bành Tuấn Kiệt
                     </a>
 
-                    {/* Desktop Navigation */}
+                    {/* Điều hướng Desktop */}
                     <div className="hidden md:flex items-center gap-8">
                         {navItems.map((item) => (
                             <a
@@ -48,7 +48,7 @@ export default function Navbar() {
                         ))}
                     </div>
 
-                    {/* Mobile Menu Button */}
+                    {/* Nút menu Mobile */}
                     <Button
                         variant="ghost"
                         size="icon"
@@ -60,7 +60,7 @@ export default function Navbar() {
                 </div>
             </div>
 
-            {/* Mobile Menu */}
+            {/* Menu Mobile */}
             {isMobileMenuOpen && (
                 <div className="md:hidden bg-card border-t border-border">
                     <div className="px-4 py-4 space-y-3">

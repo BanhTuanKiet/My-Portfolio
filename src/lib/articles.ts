@@ -1,73 +1,68 @@
 export interface Article {
-  slug: string
-  title: string
-  description: string
-  date: string
-  topics: string[]
-  content: {
-    introduction: string
-    sections: {
-      heading: string
-      content: string
-      codeExample?: string
-    }[]
-    conclusion: string
-  }
+    slug: string
+    title: string
+    description: string
+    date: string
+    topics: string[]
+    content: {
+        introduction: string
+        sections: {
+            heading: string
+            content: string
+            codeExample?: string
+        }[]
+        conclusion: string
+    }
 }
 
 export const articles: Article[] = [
-  {
-    slug: "understanding-javascript-closures",
-    title: "Understanding JavaScript Closures",
-    description:
-      "Deep dive into closures, lexical scope, and how they power modern JavaScript patterns like modules and callbacks.",
-    date: "March 2024",
-    topics: ["Closures", "Scope", "Functions"],
-    content: {
-      introduction:
-        "Closures are one of the most powerful and often misunderstood concepts in JavaScript. Understanding closures is essential for writing clean, efficient code and mastering advanced JavaScript patterns.",
-      sections: [
-        {
-          heading: "What is a Closure?",
-          content:
-            "A closure is a function that has access to variables in its outer (enclosing) lexical scope, even after the outer function has returned. This means the inner function 'remembers' the environment in which it was created.",
-          codeExample: `function outerFunction(outerVariable) {
+    {
+        "slug": "understanding-javascript-closures",
+        "title": "Hiểu về Closures trong JavaScript",
+        "description": "Tìm hiểu sâu về closures, phạm vi từ vựng và cách chúng hỗ trợ các mẫu JavaScript hiện đại như modules và callbacks.",
+        "date": "Tháng 3, 2024",
+        topics: ["Closures", "Scope", "Functions"],
+        "content": {
+            "introduction": "Closures là một trong những khái niệm mạnh mẽ và thường bị hiểu nhầm nhất trong JavaScript. Hiểu về closures là điều cần thiết để viết code sạch, hiệu quả và thành thạo các mẫu JavaScript nâng cao.",
+            "sections": [
+                {
+                    "heading": "Closures là gì?",
+                    "content": "Closure là một hàm có quyền truy cập vào các biến trong phạm vi từ vựng bên ngoài (bao quanh) của nó, ngay cả sau khi hàm bên ngoài đã trả về. Điều này có nghĩa là hàm bên trong 'ghi nhớ' môi trường nơi nó được tạo ra.",
+                    "codeExample": `function outerFunction(outerVariable) {
   return function innerFunction(innerVariable) {
-    console.log('Outer:', outerVariable);
-    console.log('Inner:', innerVariable);
+    console.log('Bên ngoài:', outerVariable);
+    console.log('Bên trong:', innerVariable);
   }
 }
 
-const newFunction = outerFunction('outside');
-newFunction('inside');
-// Output: Outer: outside
-// Output: Inner: inside`,
-        },
-        {
-          heading: "Lexical Scope",
-          content:
-            "Lexical scope means that the scope is determined by where functions are declared in the code, not where they are called. This is the foundation of closures.",
-          codeExample: `const globalVar = 'global';
+const newFunction = outerFunction('bên ngoài');
+newFunction('bên trong');
+// Kết quả: Bên ngoài: bên ngoài
+// Kết quả: Bên trong: bên trong`
+                },
+                {
+                    "heading": "Phạm vi từ vựng",
+                    "content": "Phạm vi từ vựng có nghĩa là phạm vi được xác định bởi nơi các hàm được khai báo trong code, không phải nơi chúng được gọi. Đây là nền tảng của closures.",
+                    "codeExample": `const globalVar = 'toàn cục';
 
 function outer() {
-  const outerVar = 'outer';
+  const outerVar = 'bên ngoài';
   
   function inner() {
-    const innerVar = 'inner';
+    const innerVar = 'bên trong';
     console.log(globalVar, outerVar, innerVar);
   }
   
   inner();
 }
 
-outer(); // 'global outer inner'`,
-        },
-        {
-          heading: "Practical Use Cases",
-          content:
-            "Closures are used extensively in JavaScript for data privacy, creating factory functions, and implementing the module pattern. They're also the foundation of callbacks and event handlers.",
-          codeExample: `function createCounter() {
-  let count = 0; // Private variable
+outer(); // 'toàn cục bên ngoài bên trong'`
+                },
+                {
+                    "heading": "Trường hợp sử dụng thực tế",
+                    "content": "Closures được sử dụng rộng rãi trong JavaScript để bảo mật dữ liệu, tạo hàm factory và triển khai mẫu module. Chúng cũng là nền tảng của callbacks và xử lý sự kiện.",
+                    "codeExample": `function createCounter() {
+  let count = 0; // Biến private
   
   return {
     increment: () => ++count,
@@ -79,54 +74,48 @@ outer(); // 'global outer inner'`,
 const counter = createCounter();
 console.log(counter.increment()); // 1
 console.log(counter.increment()); // 2
-console.log(counter.getCount());  // 2`,
-        },
-      ],
-      conclusion:
-        "Closures are a fundamental concept that enables powerful programming patterns in JavaScript. By understanding how closures work with lexical scope, you can write more maintainable and efficient code.",
+console.log(counter.getCount());  // 2`
+                }
+            ],
+            "conclusion": "Closures là một khái niệm cơ bản cho phép các mẫu lập trình mạnh mẽ trong JavaScript. Bằng cách hiểu cách closures hoạt động với phạm vi từ vựng, bạn có thể viết code dễ bảo trì và hiệu quả hơn."
+        }
     },
-  },
-  {
-    slug: "async-await-vs-promises",
-    title: "Async/Await vs Promises: When to Use What",
-    description:
-      "Comprehensive guide comparing async/await and promises, with real-world examples and best practices for handling asynchronous operations.",
-    date: "February 2024",
-    topics: ["Async", "Promises", "ES6+"],
-    content: {
-      introduction:
-        "Asynchronous programming is crucial in JavaScript, and both Promises and async/await are powerful tools for handling async operations. Let's explore when to use each approach.",
-      sections: [
-        {
-          heading: "Understanding Promises",
-          content:
-            "Promises represent the eventual completion or failure of an asynchronous operation. They provide a cleaner alternative to callback hell with .then() and .catch() methods.",
-          codeExample: `fetch('https://api.example.com/data')
+    {
+        "slug": "async-await-vs-promises",
+        "title": "Async/Await vs Promises: Khi nào nên sử dụng cái nào",
+        "description": "Hướng dẫn toàn diện so sánh async/await và promises, với các ví dụ thực tế và phương pháp hay nhất để xử lý các thao tác bất đồng bộ.",
+        "date": "Tháng 2, 2024",
+        topics: ["Async", "Promises", "ES6+"],
+        "content": {
+            "introduction": "Lập trình bất đồng bộ rất quan trọng trong JavaScript, và cả Promises lẫn async/await đều là những công cụ mạnh mẽ để xử lý các thao tác bất đồng bộ. Hãy cùng khám phá khi nào nên sử dụng mỗi phương pháp.",
+            "sections": [
+                {
+                    "heading": "Hiểu về Promises",
+                    "content": "Promises đại diện cho việc hoàn thành hoặc thất bại cuối cùng của một thao tác bất đồng bộ. Chúng cung cấp một giải pháp thay thế sạch hơn cho callback hell với các phương thức .then() và .catch().",
+                    "codeExample": `fetch('https://api.example.com/data')
   .then(response => response.json())
   .then(data => console.log(data))
-  .catch(error => console.error('Error:', error));`,
-        },
-        {
-          heading: "Async/Await Syntax",
-          content:
-            "Async/await is syntactic sugar built on top of Promises, making asynchronous code look and behave more like synchronous code. It improves readability and error handling.",
-          codeExample: `async function fetchData() {
+  .catch(error => console.error('Lỗi:', error));`
+                },
+                {
+                    "heading": "Cú pháp Async/Await",
+                    "content": "Async/await là cú pháp được xây dựng trên nền tảng Promises, giúp code bất đồng bộ trông và hoạt động giống như code đồng bộ hơn. Nó cải thiện khả năng đọc code và xử lý lỗi.",
+                    "codeExample": `async function fetchData() {
   try {
     const response = await fetch('https://api.example.com/data');
     const data = await response.json();
     console.log(data);
   } catch (error) {
-    console.error('Error:', error);
+    console.error('Lỗi:', error);
   }
 }
 
-fetchData();`,
-        },
-        {
-          heading: "When to Use Each",
-          content:
-            "Use async/await for sequential operations and better readability. Use Promise.all() for parallel operations. Combine both approaches based on your specific needs.",
-          codeExample: `// Parallel execution with Promise.all
+fetchData();`
+                },
+                {
+                    "heading": "Khi nào nên sử dụng mỗi phương pháp",
+                    "content": "Sử dụng async/await cho các thao tác tuần tự và khả năng đọc code tốt hơn. Sử dụng Promise.all() cho các thao tác song song. Kết hợp cả hai phương pháp dựa trên nhu cầu cụ thể của bạn.",
+                    "codeExample": `// Thực thi song song với Promise.all
 async function fetchMultipleData() {
   try {
     const [users, posts, comments] = await Promise.all([
@@ -137,63 +126,57 @@ async function fetchMultipleData() {
     
     return { users, posts, comments };
   } catch (error) {
-    console.error('Error:', error);
+    console.error('Lỗi:', error);
   }
-}`,
-        },
-      ],
-      conclusion:
-        "Both Promises and async/await have their place in modern JavaScript. Understanding when to use each approach will help you write cleaner, more maintainable asynchronous code.",
+}`
+                }
+            ],
+            "conclusion": "Cả Promises và async/await đều có vị trí của chúng trong JavaScript hiện đại. Hiểu khi nào nên sử dụng mỗi phương pháp sẽ giúp bạn viết code bất đồng bộ sạch hơn và dễ bảo trì hơn."
+        }
     },
-  },
-  {
-    slug: "javascript-event-loop-explained",
-    title: "JavaScript Event Loop Explained",
-    description:
-      "Visual explanation of how the event loop works, covering call stack, callback queue, and microtasks with practical examples.",
-    date: "January 2024",
-    topics: ["Event Loop", "Async", "Performance"],
-    content: {
-      introduction:
-        "The event loop is the secret behind JavaScript's asynchronous behavior. Understanding how it works is crucial for writing efficient code and debugging performance issues.",
-      sections: [
-        {
-          heading: "The Call Stack",
-          content:
-            "The call stack is a LIFO (Last In, First Out) data structure that keeps track of function execution. When a function is called, it's added to the stack; when it returns, it's removed.",
-          codeExample: `function first() {
-  console.log('First');
+    {
+        "slug": "javascript-event-loop-explained",
+        "title": "Giải thích Event Loop trong JavaScript",
+        "description": "Giải thích trực quan về cách hoạt động của event loop, bao gồm call stack, callback queue và microtasks với các ví dụ thực tế.",
+        "date": "Tháng 1, 2024",
+        topics: ["Event Loop", "Async", "Performance"],
+        "content": {
+            "introduction": "Event loop là bí mật đằng sau hành vi bất đồng bộ của JavaScript. Hiểu cách nó hoạt động là rất quan trọng để viết code hiệu quả và gỡ lỗi các vấn đề về hiệu suất.",
+            "sections": [
+                {
+                    "heading": "Call Stack",
+                    "content": "Call stack là một cấu trúc dữ liệu LIFO (Last In, First Out) theo dõi việc thực thi hàm. Khi một hàm được gọi, nó được thêm vào stack; khi nó trả về, nó được xóa khỏi stack.",
+                    "codeExample": `function first() {
+  console.log('Đầu tiên');
   second();
-  console.log('First again');
+  console.log('Đầu tiên một lần nữa');
 }
 
 function second() {
-  console.log('Second');
+  console.log('Thứ hai');
 }
 
 first();
-// Output: First, Second, First again`,
-        },
-        {
-          heading: "Callback Queue and Event Loop",
-          content:
-            "When asynchronous operations complete, their callbacks are placed in the callback queue. The event loop continuously checks if the call stack is empty and moves callbacks from the queue to the stack.",
-          codeExample: `console.log('Start');
+// Kết quả: Đầu tiên, Thứ hai, Đầu tiên một lần nữa`
+                },
+                {
+                    "heading": "Callback Queue và Event Loop",
+                    "content": "Khi các thao tác bất đồng bộ hoàn thành, callback của chúng được đặt vào callback queue. Event loop liên tục kiểm tra xem call stack có trống không và di chuyển callback từ queue sang stack.",
+                    "codeExample": `console.log('Bắt đầu');
 
 setTimeout(() => {
   console.log('Timeout');
 }, 0);
 
-console.log('End');
+console.log('Kết thúc');
 
-// Output: Start, End, Timeout
-// Even with 0ms delay, setTimeout is async`,
-        },
-        {
-          heading: "Microtasks vs Macrotasks",
-          content:
-            "Microtasks (Promises, queueMicrotask) have higher priority than macrotasks (setTimeout, setInterval). All microtasks are executed before the next macrotask.",
-          codeExample: `console.log('Script start');
+// Kết quả: Bắt đầu, Kết thúc, Timeout
+// Ngay cả với độ trễ 0ms, setTimeout vẫn là bất đồng bộ`
+                },
+                {
+                    "heading": "Microtasks vs Macrotasks",
+                    "content": "Microtasks (Promises, queueMicrotask) có độ ưu tiên cao hơn macrotasks (setTimeout, setInterval). Tất cả microtasks được thực thi trước macrotask tiếp theo.",
+                    "codeExample": `console.log('Bắt đầu script');
 
 setTimeout(() => {
   console.log('setTimeout');
@@ -203,31 +186,27 @@ Promise.resolve()
   .then(() => console.log('Promise 1'))
   .then(() => console.log('Promise 2'));
 
-console.log('Script end');
+console.log('Kết thúc script');
 
-// Output: Script start, Script end, Promise 1, Promise 2, setTimeout`,
-        },
-      ],
-      conclusion:
-        "The event loop is what makes JavaScript's non-blocking I/O possible. By understanding the call stack, callback queue, and microtask queue, you can write more predictable asynchronous code.",
+// Kết quả: Bắt đầu script, Kết thúc script, Promise 1, Promise 2, setTimeout`
+                }
+            ],
+            "conclusion": "Event loop là thứ làm cho I/O không chặn của JavaScript trở nên khả thi. Bằng cách hiểu call stack, callback queue và microtask queue, bạn có thể viết code bất đồng bộ dễ dự đoán hơn."
+        }
     },
-  },
-  {
-    slug: "mastering-array-methods",
-    title: "Mastering Array Methods in JavaScript",
-    description:
-      "Complete guide to map, filter, reduce, and other array methods with performance tips and common use cases in modern development.",
-    date: "December 2023",
-    topics: ["Arrays", "Functional Programming", "ES6+"],
-    content: {
-      introduction:
-        "JavaScript array methods are essential tools for functional programming. They allow you to transform, filter, and reduce data in a clean, declarative way.",
-      sections: [
-        {
-          heading: "Map: Transform Every Element",
-          content:
-            "The map() method creates a new array by applying a function to each element. It's perfect for transforming data without mutating the original array.",
-          codeExample: `const numbers = [1, 2, 3, 4, 5];
+    {
+        "slug": "mastering-array-methods",
+        "title": "Thành thạo các phương thức Mảng trong JavaScript",
+        "description": "Hướng dẫn đầy đủ về map, filter, reduce và các phương thức mảng khác với mẹo tối ưu hiệu suất và các trường hợp sử dụng phổ biến trong phát triển hiện đại.",
+        "date": "Tháng 12, 2023",
+        topics: ["Arrays", "Functional Programming", "ES6+"],
+        "content": {
+            "introduction": "Các phương thức mảng trong JavaScript là công cụ thiết yếu cho lập trình hàm. Chúng cho phép bạn biến đổi, lọc và tổng hợp dữ liệu một cách rõ ràng và khai báo.",
+            "sections": [
+                {
+                    "heading": "Map: Biến đổi từng phần tử",
+                    "content": "Phương thức map() tạo một mảng mới bằng cách áp dụng một hàm cho mỗi phần tử. Nó hoàn hảo để biến đổi dữ liệu mà không thay đổi mảng gốc.",
+                    "codeExample": `const numbers = [1, 2, 3, 4, 5];
 const doubled = numbers.map(num => num * 2);
 console.log(doubled); // [2, 4, 6, 8, 10]
 
@@ -236,13 +215,12 @@ const users = [
   { name: 'Jane', age: 30 }
 ];
 const names = users.map(user => user.name);
-console.log(names); // ['John', 'Jane']`,
-        },
-        {
-          heading: "Filter: Select Specific Elements",
-          content:
-            "The filter() method creates a new array with elements that pass a test. It's ideal for selecting subsets of data based on conditions.",
-          codeExample: `const numbers = [1, 2, 3, 4, 5, 6];
+console.log(names); // ['John', 'Jane']`
+                },
+                {
+                    "heading": "Filter: Lọc các phần tử cụ thể",
+                    "content": "Phương thức filter() tạo một mảng mới với các phần tử vượt qua một bài kiểm tra. Nó lý tưởng để chọn các tập hợp con dữ liệu dựa trên điều kiện.",
+                    "codeExample": `const numbers = [1, 2, 3, 4, 5, 6];
 const evenNumbers = numbers.filter(num => num % 2 === 0);
 console.log(evenNumbers); // [2, 4, 6]
 
@@ -251,13 +229,12 @@ const users = [
   { name: 'Jane', age: 30, active: false },
   { name: 'Bob', age: 35, active: true }
 ];
-const activeUsers = users.filter(user => user.active);`,
-        },
-        {
-          heading: "Reduce: Aggregate Data",
-          content:
-            "The reduce() method executes a reducer function on each element, resulting in a single output value. It's powerful for aggregating data, counting, grouping, and more.",
-          codeExample: `const numbers = [1, 2, 3, 4, 5];
+const activeUsers = users.filter(user => user.active);`
+                },
+                {
+                    "heading": "Reduce: Tổng hợp dữ liệu",
+                    "content": "Phương thức reduce() thực thi một hàm reducer trên mỗi phần tử, tạo ra một giá trị đầu ra duy nhất. Nó mạnh mẽ để tổng hợp dữ liệu, đếm, nhóm và nhiều hơn nữa.",
+                    "codeExample": `const numbers = [1, 2, 3, 4, 5];
 const sum = numbers.reduce((acc, num) => acc + num, 0);
 console.log(sum); // 15
 
@@ -267,37 +244,33 @@ const items = [
   { name: 'Orange', price: 1.2 }
 ];
 const total = items.reduce((sum, item) => sum + item.price, 0);
-console.log(total); // 3.5`,
-        },
-      ],
-      conclusion:
-        "Mastering array methods like map, filter, and reduce will make your code more readable and maintainable. These functional programming techniques are essential for modern JavaScript development.",
+console.log(total); // 3.5`
+                }
+            ],
+            "conclusion": "Thành thạo các phương thức mảng như map, filter và reduce sẽ làm cho code của bạn dễ đọc và dễ bảo trì hơn. Những kỹ thuật lập trình hàm này là thiết yếu cho phát triển JavaScript hiện đại."
+        }
     },
-  },
-  {
-    slug: "javascript-design-patterns",
-    title: "JavaScript Design Patterns for Clean Code",
-    description:
-      "Exploring essential design patterns like Module, Observer, and Factory patterns to write maintainable and scalable JavaScript code.",
-    date: "November 2023",
-    topics: ["Design Patterns", "Architecture", "Best Practices"],
-    content: {
-      introduction:
-        "Design patterns are reusable solutions to common programming problems. Learning these patterns will help you write more maintainable, scalable, and testable code.",
-      sections: [
-        {
-          heading: "Module Pattern",
-          content:
-            "The Module pattern provides encapsulation and privacy, allowing you to create public and private methods and variables. It's one of the most commonly used patterns in JavaScript.",
-          codeExample: `const UserModule = (function() {
-  // Private variables and functions
+    {
+        "slug": "javascript-design-patterns",
+        "title": "Design Patterns trong JavaScript cho Code Sạch",
+        "description": "Khám phá các design pattern thiết yếu như Module, Observer và Factory để viết code JavaScript dễ bảo trì và mở rộng.",
+        "date": "Tháng 11, 2023",
+        topics: ["Design Patterns", "Architecture", "Best Practices"],
+        "content": {
+            "introduction": "Design patterns là các giải pháp tái sử dụng cho các vấn đề lập trình phổ biến. Học các pattern này sẽ giúp bạn viết code dễ bảo trì, mở rộng và kiểm thử hơn.",
+            "sections": [
+                {
+                    "heading": "Module Pattern",
+                    "content": "Module pattern cung cấp tính đóng gói và riêng tư, cho phép bạn tạo các phương thức và biến công khai và riêng tư. Đây là một trong những pattern được sử dụng phổ biến nhất trong JavaScript.",
+                    "codeExample": `const UserModule = (function() {
+  // Biến và hàm riêng tư
   let users = [];
   
   function validateUser(user) {
     return user.name && user.email;
   }
   
-  // Public API
+  // API công khai
   return {
     addUser(user) {
       if (validateUser(user)) {
@@ -307,19 +280,18 @@ console.log(total); // 3.5`,
       return false;
     },
     getUsers() {
-      return [...users]; // Return copy
+      return [...users]; // Trả về bản sao
     },
     getUserCount() {
       return users.length;
     }
   };
-})();`,
-        },
-        {
-          heading: "Observer Pattern",
-          content:
-            "The Observer pattern defines a one-to-many dependency between objects. When one object changes state, all its dependents are notified automatically. This is the foundation of event-driven programming.",
-          codeExample: `class EventEmitter {
+})();`
+                },
+                {
+                    "heading": "Observer Pattern",
+                    "content": "Observer pattern định nghĩa mối quan hệ một-nhiều giữa các đối tượng. Khi một đối tượng thay đổi trạng thái, tất cả các đối tượng phụ thuộc sẽ được thông báo tự động. Đây là nền tảng của lập trình hướng sự kiện.",
+                    "codeExample": `class EventEmitter {
   constructor() {
     this.events = {};
   }
@@ -339,14 +311,13 @@ console.log(total); // 3.5`,
 }
 
 const emitter = new EventEmitter();
-emitter.on('userLogin', (user) => console.log(\`\${user} logged in\`));
-emitter.emit('userLogin', 'John'); // John logged in`,
-        },
-        {
-          heading: "Factory Pattern",
-          content:
-            "The Factory pattern provides an interface for creating objects without specifying their exact classes. It's useful when you need to create different types of objects based on certain conditions.",
-          codeExample: `class Car {
+emitter.on('userLogin', (user) => console.log(\`\${user} đã đăng nhập\`));
+emitter.emit('userLogin', 'John'); // John đã đăng nhập`
+                },
+                {
+                    "heading": "Factory Pattern",
+                    "content": "Factory pattern cung cấp một interface để tạo đối tượng mà không cần chỉ định lớp cụ thể. Nó hữu ích khi bạn cần tạo các loại đối tượng khác nhau dựa trên các điều kiện nhất định.",
+                    "codeExample": `class Car {
   constructor(options) {
     this.doors = options.doors || 4;
     this.color = options.color || 'white';
@@ -369,35 +340,31 @@ class VehicleFactory {
       case 'truck':
         return new Truck(options);
       default:
-        throw new Error('Unknown vehicle type');
+        throw new Error('Không biết loại phương tiện');
     }
   }
 }
 
 const factory = new VehicleFactory();
-const myCar = factory.createVehicle('car', { color: 'red' });`,
-        },
-      ],
-      conclusion:
-        "Design patterns are proven solutions that can significantly improve your code quality. By understanding and applying these patterns, you'll write more maintainable and scalable JavaScript applications.",
+const myCar = factory.createVehicle('car', { color: 'red' });`
+                }
+            ],
+            "conclusion": "Design patterns là các giải pháp đã được chứng minh có thể cải thiện đáng kể chất lượng code của bạn. Bằng cách hiểu và áp dụng các pattern này, bạn sẽ viết các ứng dụng JavaScript dễ bảo trì và mở rộng hơn."
+        }
     },
-  },
-  {
-  slug: "java-oop-fundamentals",
-  title: "Mastering Object-Oriented Programming in Java",
-  description:
-    "Explore the four pillars of OOP in Java — encapsulation, inheritance, polymorphism, and abstraction — and how they make Java a powerful, reusable, and maintainable language.",
-  date: "February 2024",
-  topics: ["OOP", "Classes", "Inheritance", "Encapsulation"],
-  content: {
-    introduction:
-      "Object-Oriented Programming (OOP) is the core paradigm in Java. It allows developers to structure software into modular, reusable components that mirror real-world entities.",
-    sections: [
-      {
-        heading: "Encapsulation",
-        content:
-          "Encapsulation is about bundling data (fields) and methods (functions) that operate on that data into a single unit — a class — while restricting direct access to some components.",
-        codeExample: `public class Account {
+    {
+        "slug": "java-oop-fundamentals",
+        "title": "Lập trình Hướng Đối tượng trong Java",
+        "description": "Khám phá bốn trụ cột của OOP trong Java — đóng gói, kế thừa, đa hình và trừu tượng — và cách chúng biến Java thành ngôn ngữ mạnh mẽ, tái sử dụng và dễ bảo trì.",
+        "date": "Tháng 2, 2024",
+        topics: ["OOP", "Classes", "Inheritance", "Encapsulation"],
+        "content": {
+            "introduction": "Lập trình Hướng Đối tượng (OOP) là mô hình cốt lõi trong Java. Nó cho phép các nhà phát triển cấu trúc phần mềm thành các thành phần mô-đun, có thể tái sử dụng, phản ánh các thực thể trong thế giới thực.",
+            "sections": [
+                {
+                    "heading": "Đóng gói",
+                    "content": "Đóng gói là việc gói gọn dữ liệu (trường) và phương thức (hàm) hoạt động trên dữ liệu đó thành một đơn vị duy nhất — một lớp — trong khi hạn chế quyền truy cập trực tiếp vào một số thành phần.",
+                    "codeExample": `public class Account {
   private double balance;
 
   public void deposit(double amount) {
@@ -407,73 +374,67 @@ const myCar = factory.createVehicle('car', { color: 'red' });`,
   public double getBalance() {
     return balance;
   }
-}`,
-      },
-      {
-        heading: "Inheritance",
-        content:
-          "Inheritance allows a class to inherit fields and methods from another class, enabling code reuse and logical hierarchy.",
-        codeExample: `class Animal {
+}`
+                },
+                {
+                    "heading": "Kế thừa",
+                    "content": "Kế thừa cho phép một lớp kế thừa các trường và phương thức từ một lớp khác, cho phép tái sử dụng mã và tạo hệ thống phân cấp logic.",
+                    "codeExample": `class Animal {
   void sound() {
-    System.out.println("Animal makes a sound");
+    System.out.println("Động vật kêu");
   }
 }
 
 class Dog extends Animal {
   void sound() {
-    System.out.println("Dog barks");
+    System.out.println("Chó sủa");
   }
 }
 
 public class Main {
   public static void main(String[] args) {
     Animal a = new Dog();
-    a.sound(); // Dog barks
+    a.sound(); // Chó sủa
   }
-}`,
-      },
-      {
-        heading: "Polymorphism and Abstraction",
-        content:
-          "Polymorphism lets one interface be used for different types (e.g., overriding methods), while abstraction hides implementation details from the user.",
-        codeExample: `abstract class Shape {
+}`
+                },
+                {
+                    "heading": "Đa hình và Trừu tượng",
+                    "content": "Đa hình cho phép một giao diện được sử dụng cho các kiểu khác nhau (ví dụ: ghi đè phương thức), trong khi trừu tượng ẩn chi tiết triển khai khỏi người dùng.",
+                    "codeExample": `abstract class Shape {
   abstract void draw();
 }
 
 class Circle extends Shape {
   void draw() {
-    System.out.println("Drawing Circle");
+    System.out.println("Vẽ hình tròn");
   }
 }
 
 public class Test {
   public static void main(String[] args) {
     Shape shape = new Circle();
-    shape.draw(); // Drawing Circle
+    shape.draw(); // Vẽ hình tròn
   }
-}`,
-      },
-    ],
-    conclusion:
-      "Understanding OOP is crucial for mastering Java. It promotes modularity, scalability, and clean architecture across projects.",
-  },
-},
-{
-  slug: "java-streams-api",
-  title: "Simplifying Data Processing with Java Streams",
-  description:
-    "Learn how the Java Streams API transforms data handling into a functional and expressive process for cleaner and faster code.",
-  date: "March 2024",
-  topics: ["Streams", "Lambda", "Functional Programming"],
-  content: {
-    introduction:
-      "Introduced in Java 8, the Streams API enables functional-style operations on collections, allowing developers to process data declaratively.",
-    sections: [
-      {
-        heading: "What is a Stream?",
-        content:
-          "A Stream represents a sequence of elements that can be processed with operations like filter, map, and reduce — without modifying the underlying data source.",
-        codeExample: `import java.util.*;
+}`
+                }
+            ],
+            "conclusion": "Hiểu về OOP là rất quan trọng để thành thạo Java. Nó thúc đẩy tính mô-đun, khả năng mở rộng và kiến trúc sạch sẽ trong các dự án."
+        }
+    },
+    {
+        "slug": "java-streams-api",
+        "title": "Xử lý Dữ liệu Đơn giản hóa với Java Streams",
+        "description": "Tìm hiểu cách Java Streams API biến việc xử lý dữ liệu thành một quy trình hàm và biểu cảm để có mã sạch hơn và nhanh hơn.",
+        "date": "Tháng 3, 2024",
+        topics: ["Streams", "Lambda", "Functional Programming"],
+        "content": {
+            "introduction": "Được giới thiệu trong Java 8, Streams API cho phép thực hiện các thao tác theo phong cách hàm trên các tập hợp, cho phép các nhà phát triển xử lý dữ liệu một cách khai báo.",
+            "sections": [
+                {
+                    "heading": "Stream là gì?",
+                    "content": "Một Stream đại diện cho một chuỗi các phần tử có thể được xử lý với các thao tác như filter, map và reduce — mà không làm thay đổi nguồn dữ liệu cơ bản.",
+                    "codeExample": `import java.util.*;
 import java.util.stream.*;
 
 public class StreamExample {
@@ -484,44 +445,39 @@ public class StreamExample {
            .map(n -> n * n)
            .forEach(System.out::println); // 4, 16
   }
-}`,
-      },
-      {
-        heading: "Intermediate and Terminal Operations",
-        content:
-          "Intermediate operations (like `filter`, `map`) return a new stream, while terminal operations (like `collect`, `forEach`) produce a result or side effect.",
-        codeExample: `List<String> names = Arrays.asList("Anna", "Bob", "Charlie");
+}`
+                },
+                {
+                    "heading": "Thao tác Trung gian và Kết thúc",
+                    "content": "Các thao tác trung gian (như `filter`, `map`) trả về một stream mới, trong khi các thao tác kết thúc (như `collect`, `forEach`) tạo ra kết quả hoặc hiệu ứng phụ.",
+                    "codeExample": `List<String> names = Arrays.asList("Anna", "Bob", "Charlie");
 
 List<String> result = names.stream()
   .filter(name -> name.startsWith("C"))
   .map(String::toUpperCase)
   .collect(Collectors.toList());
 
-System.out.println(result); // [CHARLIE]`,
-      },
-    ],
-    conclusion:
-      "Streams make Java more expressive and efficient, promoting immutability and parallelism in data processing.",
-  },
-},
-{
-  slug: "java-multithreading-basics",
-  title: "Getting Started with Multithreading in Java",
-  description:
-    "Understand how threads work in Java and how to write concurrent programs using Runnable, Thread, and ExecutorService.",
-  date: "April 2024",
-  topics: ["Multithreading", "Concurrency", "Synchronization"],
-  content: {
-    introduction:
-      "Multithreading allows Java programs to perform multiple tasks simultaneously, improving performance and responsiveness.",
-    sections: [
-      {
-        heading: "Creating Threads",
-        content:
-          "There are two primary ways to create threads in Java: extending the Thread class or implementing the Runnable interface.",
-        codeExample: `class MyThread extends Thread {
+System.out.println(result); // [CHARLIE]`
+                }
+            ],
+            "conclusion": "Streams làm cho Java trở nên biểu cảm và hiệu quả hơn, thúc đẩy tính bất biến và xử lý song song trong xử lý dữ liệu."
+        }
+    },
+    {
+        "slug": "java-multithreading-basics",
+        "title": "Bắt đầu với Lập trình Đa luồng trong Java",
+        "description": "Hiểu cách luồng hoạt động trong Java và cách viết các chương trình đồng thời sử dụng Runnable, Thread và ExecutorService.",
+        "date": "Tháng 4, 2024",
+        topics: ["Multithreading", "Concurrency", "Synchronization"],
+        "content": {
+            "introduction": "Lập trình đa luồng cho phép các chương trình Java thực hiện nhiều tác vụ đồng thời, cải thiện hiệu suất và khả năng phản hồi.",
+            "sections": [
+                {
+                    "heading": "Tạo Luồng",
+                    "content": "Có hai cách chính để tạo luồng trong Java: mở rộng lớp Thread hoặc triển khai giao diện Runnable.",
+                    "codeExample": `class MyThread extends Thread {
   public void run() {
-    System.out.println("Thread running: " + Thread.currentThread().getName());
+    System.out.println("Luồng đang chạy: " + Thread.currentThread().getName());
   }
 }
 
@@ -530,60 +486,53 @@ public class Main {
     MyThread t1 = new MyThread();
     t1.start();
   }
-}`,
-      },
-      {
-        heading: "Using Runnable and ExecutorService",
-        content:
-          "ExecutorService provides a higher-level API for managing threads efficiently, avoiding manual thread creation.",
-        codeExample: `import java.util.concurrent.*;
+}`
+                },
+                {
+                    "heading": "Sử dụng Runnable và ExecutorService",
+                    "content": "ExecutorService cung cấp API cấp cao để quản lý luồng hiệu quả, tránh việc tạo luồng thủ công.",
+                    "codeExample": `import java.util.concurrent.*;
 
 public class ExecutorExample {
   public static void main(String[] args) {
     ExecutorService executor = Executors.newFixedThreadPool(2);
-    Runnable task = () -> System.out.println("Running task in " + Thread.currentThread().getName());
+    Runnable task = () -> System.out.println("Đang chạy tác vụ trong " + Thread.currentThread().getName());
     executor.submit(task);
     executor.shutdown();
   }
-}`,
-      },
-    ],
-    conclusion:
-      "Mastering multithreading is key for building responsive, scalable Java applications that take advantage of modern CPUs.",
-  },
-},
-{
-  slug: "java-generics-explained",
-  title: "Understanding Java Generics for Type Safety",
-  description:
-    "Learn how Generics in Java bring type safety and reusability to your code through parameterized types.",
-  date: "May 2024",
-  topics: ["Generics", "Type Safety", "Collections"],
-  content: {
-    introduction:
-      "Generics allow classes, interfaces, and methods to operate on types specified as parameters. They help eliminate runtime type errors by ensuring compile-time type checking.",
-    sections: [
-      {
-        heading: "Why Use Generics?",
-        content:
-          "Before Generics, Java collections stored objects as `Object` type, forcing developers to cast them manually — which could cause `ClassCastException`.",
-        codeExample: `List list = new ArrayList();
+}`
+                }
+            ],
+            "conclusion": "Thành thạo lập trình đa luồng là chìa khóa để xây dựng các ứng dụng Java có khả năng phản hồi và mở rộng, tận dụng lợi thế của các CPU hiện đại."
+        }
+    },
+    {
+        "slug": "java-generics-explained",
+        "title": "Hiểu về Generics trong Java cho An toàn Kiểu dữ liệu",
+        "description": "Tìm hiểu cách Generics trong Java mang lại sự an toàn kiểu dữ liệu và khả năng tái sử dụng cho mã của bạn thông qua các kiểu được tham số hóa.",
+        "date": "Tháng 5, 2024",
+        topics: ["Generics", "Type Safety", "Collections"],
+        "content": {
+            "introduction": "Generics cho phép các lớp, giao diện và phương thức hoạt động trên các kiểu được chỉ định dưới dạng tham số. Chúng giúp loại bỏ lỗi kiểu dữ liệu tại thời điểm chạy bằng cách đảm bảo kiểm tra kiểu tại thời điểm biên dịch.",
+            "sections": [
+                {
+                    "heading": "Tại sao sử dụng Generics?",
+                    "content": "Trước khi có Generics, các collection trong Java lưu trữ đối tượng dưới dạng kiểu `Object`, buộc các nhà phát triển phải ép kiểu thủ công — điều này có thể gây ra `ClassCastException`.",
+                    "codeExample": `List list = new ArrayList();
 list.add("Hello");
-String s = (String) list.get(0); // Manual cast required`,
-      },
-      {
-        heading: "Generic Example",
-        content:
-          "With Generics, you can define a list that stores only specific types, making code safer and cleaner.",
-        codeExample: `List<String> names = new ArrayList<>();
+String s = (String) list.get(0); // Yêu cầu ép kiểu thủ công`
+                },
+                {
+                    "heading": "Ví dụ về Generics",
+                    "content": "Với Generics, bạn có thể định nghĩa một danh sách chỉ lưu trữ các kiểu cụ thể, làm cho mã an toàn hơn và sạch hơn.",
+                    "codeExample": `List<String> names = new ArrayList<>();
 names.add("Alice");
-String name = names.get(0); // No cast needed`,
-      },
-      {
-        heading: "Generic Class",
-        content:
-          "You can also create your own generic classes with type parameters.",
-        codeExample: `public class Box<T> {
+String name = names.get(0); // Không cần ép kiểu`
+                },
+                {
+                    "heading": "Lớp Generic",
+                    "content": "Bạn cũng có thể tạo các lớp generic của riêng mình với các tham số kiểu.",
+                    "codeExample": `public class Box<T> {
   private T value;
   public void set(T value) { this.value = value; }
   public T get() { return value; }
@@ -591,70 +540,62 @@ String name = names.get(0); // No cast needed`,
 
 Box<Integer> intBox = new Box<>();
 intBox.set(42);
-System.out.println(intBox.get());`,
-      },
-    ],
-    conclusion:
-      "Generics make Java code safer, cleaner, and reusable by catching type-related errors during compilation.",
-  },
-},
-{
-  slug: "java-exception-handling",
-  title: "Mastering Exception Handling in Java",
-  description:
-    "Learn how Java's robust exception handling system helps manage runtime errors gracefully and maintain clean program flow.",
-  date: "June 2024",
-  topics: ["Exceptions", "Error Handling", "Try-Catch"],
-  content: {
-    introduction:
-      "Exception handling in Java is a mechanism that allows developers to manage errors and exceptional conditions systematically, preventing application crashes.",
-    sections: [
-      {
-        heading: "Types of Exceptions",
-        content:
-          "Java divides exceptions into Checked, Unchecked, and Errors. Checked exceptions must be handled explicitly, while unchecked ones occur due to programming logic.",
-        codeExample: `try {
+System.out.println(intBox.get());`
+                }
+            ],
+            "conclusion": "Generics làm cho mã Java an toàn hơn, sạch hơn và có thể tái sử dụng bằng cách phát hiện các lỗi liên quan đến kiểu dữ liệu trong quá trình biên dịch."
+        }
+    },
+    {
+        "slug": "java-exception-handling",
+        "title": "Thành thạo Xử lý Ngoại lệ trong Java",
+        "description": "Tìm hiểu cách hệ thống xử lý ngoại lệ mạnh mẽ của Java giúp quản lý lỗi runtime một cách uyển chuyển và duy trì luồng chương trình sạch sẽ.",
+        "date": "Tháng 6, 2024",
+        topics: ["Exceptions", "Error Handling", "Try-Catch"],
+        "content": {
+            "introduction": "Xử lý ngoại lệ trong Java là một cơ chế cho phép các nhà phát triển quản lý lỗi và các điều kiện bất thường một cách có hệ thống, ngăn chặn sự cố ứng dụng.",
+            "sections": [
+                {
+                    "heading": "Các loại Ngoại lệ",
+                    "content": "Java chia ngoại lệ thành Checked, Unchecked và Errors. Các ngoại lệ Checked phải được xử lý rõ ràng, trong khi các ngoại lệ Unchecked xảy ra do lỗi logic lập trình.",
+                    "codeExample": `try {
   FileReader reader = new FileReader("file.txt");
 } catch (FileNotFoundException e) {
-  System.out.println("File not found: " + e.getMessage());
-}`,
-      },
-      {
-        heading: "Throwing Exceptions",
-        content:
-          "You can create and throw your own exceptions to signal error conditions in custom logic.",
-        codeExample: `public class InvalidAgeException extends Exception {
+  System.out.println("Không tìm thấy file: " + e.getMessage());
+}`
+                },
+                {
+                    "heading": "Ném Ngoại lệ",
+                    "content": "Bạn có thể tạo và ném các ngoại lệ của riêng mình để báo hiệu các điều kiện lỗi trong logic tùy chỉnh.",
+                    "codeExample": `public class InvalidAgeException extends Exception {
   public InvalidAgeException(String msg) {
     super(msg);
   }
 }
 
 public void validateAge(int age) throws InvalidAgeException {
-  if (age < 18) throw new InvalidAgeException("Age must be 18 or above");
-}`,
-      },
-      {
-        heading: "Try-with-Resources",
-        content:
-          "Introduced in Java 7, try-with-resources automatically closes resources like streams or files after use.",
-        codeExample: `try (BufferedReader br = new BufferedReader(new FileReader("data.txt"))) {
+  if (age < 18) throw new InvalidAgeException("Tuổi phải từ 18 trở lên");
+}`
+                },
+                {
+                    "heading": "Try-with-Resources",
+                    "content": "Được giới thiệu trong Java 7, try-with-resources tự động đóng các tài nguyên như stream hoặc file sau khi sử dụng.",
+                    "codeExample": `try (BufferedReader br = new BufferedReader(new FileReader("data.txt"))) {
   System.out.println(br.readLine());
 } catch (IOException e) {
   e.printStackTrace();
-}`,
-      },
-    ],
-    conclusion:
-      "By mastering exception handling, developers can make their Java applications more reliable, maintainable, and user-friendly.",
-  },
-},
-
+}`
+                }
+            ],
+            "conclusion": "Bằng cách thành thạo xử lý ngoại lệ, các nhà phát triển có thể làm cho ứng dụng Java của họ đáng tin cậy hơn, dễ bảo trì hơn và thân thiện với người dùng hơn."
+        }
+    },
 ]
 
 export function getArticleBySlug(slug: string): Article | undefined {
-  return articles.find((article) => article.slug === slug)
+    return articles.find((article) => article.slug === slug)
 }
 
 export function getAllArticles(): Article[] {
-  return articles
+    return articles
 }

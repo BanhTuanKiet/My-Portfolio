@@ -2,28 +2,28 @@ import { ASPNETCore, Bootstrap, CleanArchitecture, Cloudinary, CSharp, EntityFra
 import { Code2, Server, Database, Wrench, Boxes } from "lucide-react"
 
 const techStack = {
-    Frontend: [JavaScript, TypeScript, Reactjs, Nextjs, TailwindCSS, Bootstrap],
-    Backend: [CSharp, ASPNETCore, Expressjs, EntityFrameworkCore],
-    Database: [SQL, NoSQL],
-    Tools: [Git, GitHub, Postman, Redis, Render, Firebase, GoogleCloud, Cloudinary],
-    Other: [CleanArchitecture, JWT, Identity, Middleware, SignalR, RESTfulAPI],
+    "Frontend": [JavaScript, TypeScript, Reactjs, Nextjs, TailwindCSS, Bootstrap],
+    "Backend": [CSharp, ASPNETCore, Expressjs, EntityFrameworkCore],
+    "Cơ sở dữ liệu": [SQL, NoSQL],
+    "Công cụ": [Git, GitHub, Postman, Redis, Render, Firebase, GoogleCloud, Cloudinary],
+    "Khác": [CleanArchitecture, JWT, Identity, Middleware, SignalR, RESTfulAPI],
 }
 
 const categoryIcons: Record<string, React.ElementType> = {
-    Frontend: Code2,
-    Backend: Server,
-    Database: Database,
-    Tools: Wrench,
-    Other: Boxes,
+    "Frontend": Code2,
+    "Backend": Server,
+    "Cơ sở dữ liệu": Database,
+    "Công cụ": Wrench,
+    "Khác": Boxes,
 }
 
 export default function TechStack() {
     return (
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/30">
             <div className="max-w-6xl mx-auto">
-                <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-center">Tech Stack</h2>
+                <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-center">Công Nghệ & Công Cụ</h2>
                 <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-                    Technologies and tools I work with to build modern applications
+                    Các công nghệ và công cụ tôi sử dụng để xây dựng ứng dụng hiện đại
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -1,3 +1,5 @@
+"use client"
+
 import { Mail, Github, Linkedin, MapPin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -6,7 +8,7 @@ const contactInfo = [
         icon: Mail,
         label: "Email",
         value: "banhtuankiet2908@gmail.com",
-        href: "mailto:banhtuankiet2908@gmail.com",
+        href: "#", // sẽ được xử lý riêng bằng handleEmailClick
     },
     {
         icon: Github,
@@ -22,24 +24,33 @@ const contactInfo = [
     },
     {
         icon: MapPin,
-        label: "Location",
-        value: "Tan Binh, Ho Chi Minh City, Vietnam",
+        label: "Địa điểm",
+        value: "Tân Bình, Thành phố Hồ Chí Minh, Việt Nam",
         href: "https://maps.app.goo.gl/wsbLFZ6eWSQpmDY67",
     },
 ]
 
 export default function Contact() {
+    const handleEmailClick = () => {
+        const email = "banhtuankiet2908@gmail.com"
+        const subject = "Liên hệ từ portfolio"
+        const body = "Chào bạn,\n\nTôi đã xem portfolio của bạn và muốn liên hệ để thảo luận về..."
+        const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+        window.open(gmailUrl, "_blank")
+    }
+
     return (
         <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
-                <h2 className="text-3xl sm:text-4xl font-bold mb-4">Get In Touch</h2>
+                <h2 className="text-3xl sm:text-4xl font-bold mb-4">Liên Hệ</h2>
                 <p className="text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-                    {"I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out!"}
+                    Tôi luôn sẵn sàng thảo luận về các dự án mới, ý tưởng sáng tạo hoặc cơ hội trở thành một phần trong tầm nhìn của bạn. Đừng ngần ngại liên hệ!
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
                     {contactInfo.map((info, index) => {
                         const Icon = info.icon
+                        const isEmail = info.label === "Email"
                         return (
                             <div
                                 key={index}
@@ -53,10 +64,11 @@ export default function Contact() {
                                         <p className="text-sm text-muted-foreground mb-1">{info.label}</p>
                                         {info.href ? (
                                             <a
-                                                href={info.href}
-                                                target="_blank"
+                                                href={isEmail ? "#" : info.href}
+                                                onClick={isEmail ? handleEmailClick : undefined}
+                                                target={isEmail ? "_self" : "_blank"}
                                                 rel="noopener noreferrer"
-                                                className="text-foreground hover:text-primary transition-colors"
+                                                className="text-foreground hover:text-primary transition-colors cursor-pointer"
                                             >
                                                 {info.value}
                                             </a>
@@ -70,11 +82,9 @@ export default function Contact() {
                     })}
                 </div>
 
-                <Button size="lg" asChild>
-                    <a href="mailto:banhtuankiet2908@gmail.com" className="gap-2">
-                        <Mail className="h-4 w-4" />
-                        Send me an email
-                    </a>
+                <Button size="lg" onClick={handleEmailClick} className="gap-2 cursor-pointer">
+                    <Mail className="h-4 w-4" />
+                    Gửi email cho tôi
                 </Button>
             </div>
         </section>

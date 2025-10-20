@@ -19,7 +19,6 @@ export default function Home() {
         <WhatIDo />
         <TechStack />
         <Projects />
-        {/* <Experience /> */}
         <KnowledgeSharing />
         <Education />
         <SoftSkills />

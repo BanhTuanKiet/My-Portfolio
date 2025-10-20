@@ -1,9 +1,12 @@
 "use client"
 
 import { Github, Linkedin, Mail } from "lucide-react"
+import { useLanguage } from "./languageContext"
 
 export default function Footer() {
     const currentYear = new Date().getFullYear()
+    const { isVietnamese } = useLanguage()
+    const content = !isVietnamese ? "Banh Tuan Kiet. Built with Next.js and TailwindCSS" : "Banh Tuan Kiet. Được xây dựng bằng Next.js và TailwindCSS."
 
     const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
         e.preventDefault()
@@ -19,7 +22,7 @@ export default function Footer() {
             <div className="max-w-6xl mx-auto">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                     <p className="text-sm text-muted-foreground">
-                        © {currentYear} Banh Tuan Kiet. Built with Next.js and TailwindCSS
+                        © {currentYear} {content}
                     </p>
 
                     <div className="flex items-center gap-4">

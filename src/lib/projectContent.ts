@@ -34,9 +34,10 @@ export const projectContent = {
                     "Kiểm tra người được chỉ định và thông báo"
                 ],
                 images: [
-                    "/images/hospital1.png",
-                    "/images/hospital2.png",
-                    "/images/hospital3.png",
+                    "/images/project1.png",
+                    "/images/project2.png",
+                    "/images/project3.png",
+                    "/images/project4.png",
                 ],
                 teamSize: 3,
                 duration: "Tháng 9/2025 - Hiện tại",
@@ -59,6 +60,7 @@ export const projectContent = {
                     "/images/hospital1.png",
                     "/images/hospital2.png",
                     "/images/hospital3.png",
+                    "/images/hospital4.png",
                 ],
                 teamSize: 3,
                 duration: "Tháng 3 - 5/2025",
@@ -107,9 +109,10 @@ export const projectContent = {
                     "Assignee validation and instant notifications"
                 ],
                 images: [
-                    "/images/hospital1.png",
-                    "/images/hospital2.png",
-                    "/images/hospital3.png",
+                    "/images/project1.png",
+                    "/images/project2.png",
+                    "/images/project3.png",
+                    "/images/project4.png",
                 ],
                 teamSize: 3,
                 duration: "Sep 2025 - Present",
@@ -132,6 +135,7 @@ export const projectContent = {
                     "/images/hospital1.png",
                     "/images/hospital2.png",
                     "/images/hospital3.png",
+                    "/images/hospital4.png",
                 ],
                 teamSize: 3,
                 duration: "Mar - May 2025",

@@ -17,7 +17,8 @@ export default function TechStack() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {Object.entries(t.categories).map(([category, technologies]) => {
-            const Icon = t.categoryIcons[category]
+            const Icon = t.categoryIcons[category as keyof typeof t.categoryIcons]
+
             return (
               <div
                 key={category}

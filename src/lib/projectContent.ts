@@ -80,9 +80,10 @@ export const projectContent = {
                     "Tích hợp Cloudinary để lưu trữ hình ảnh và Firebase cho thông báo"
                 ],
                 images: [
-                    "/images/hospital1.png",
-                    "/images/hospital2.png",
-                    "/images/hospital3.png",
+                    "/images/e-commerce1.png",
+                    "/images/e-commerce2.png",
+                    "/images/e-commerce1.png",
+                    "/images/e-commerce1.png",
                 ],
                 teamSize: 1,
                 duration: "Tháng 7 - 9/2025",
@@ -155,9 +156,10 @@ export const projectContent = {
                     "Cloudinary for image storage and Firebase for notifications"
                 ],
                 images: [
-                    "/images/hospital1.png",
-                    "/images/hospital2.png",
-                    "/images/hospital3.png",
+                    // "/images/e-commerce1.png",
+                    "/images/e-commerce2.png",
+                    // "/images/e-commerce1.png",
+                    // "/images/e-commerce1.png",
                 ],
                 teamSize: 1,
                 duration: "Jul - Sep 2025",

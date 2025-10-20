@@ -82,6 +82,8 @@ export const projectContent = {
                 images: [
                     "/images/e-commerce1.png",
                     "/images/e-commerce2.png",
+                    "/images/e-commerce1.png",
+                    "/images/e-commerce2.png",
                 ],
                 teamSize: 1,
                 duration: "Tháng 7 - 9/2025",
@@ -156,8 +158,8 @@ export const projectContent = {
                 images: [
                     "/images/e-commerce1.png",
                     "/images/e-commerce2.png",
-                    // "/images/e-commerce1.png",
-                    // "/images/e-commerce1.png",
+                    "/images/e-commerce1.png",
+                    "/images/e-commerce2.png",
                 ],
                 teamSize: 1,
                 duration: "Jul - Sep 2025",

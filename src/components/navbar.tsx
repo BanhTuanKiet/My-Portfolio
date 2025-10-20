@@ -10,13 +10,13 @@ import { useTheme } from "./themeContext"
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [mounted, setMounted] = useState(false)
+//   const [mounted, setMounted] = useState(false)
   const { isVietnamese, toggleLanguage } = useLanguage()
-  const { theme, toggleTheme } = useTheme()
+//   const { theme, toggleTheme } = useTheme()
 
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+//   useEffect(() => {
+//     setMounted(true)
+//   }, [])
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50)
@@ -55,11 +55,11 @@ export default function Navbar() {
               {isVietnamese ? "VN" : "EN"}
             </Button>
 
-            {mounted && (
+            {/* {mounted && (
               <Button variant="ghost" size="icon" onClick={toggleTheme} aria-label="Toggle theme">
                 {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
               </Button>
-            )}
+            )} */}
 
             <Button
               variant="ghost"

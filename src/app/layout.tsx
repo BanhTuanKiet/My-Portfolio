@@ -22,12 +22,12 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}>
-                <ThemeProvider>
+                {/* <ThemeProvider> */}
                     <LanguageProvider>
                         <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
                         <Analytics />
                     </LanguageProvider>
-                </ThemeProvider>
+                {/* </ThemeProvider> */}
             </body>
         </html>
     )
